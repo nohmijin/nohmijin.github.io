@@ -1,0 +1,80 @@
+
+{% extends 'base.html' %}
+    {% block contents %}
+
+        <!--intro-->
+        <section id="main-intro" >
+            <div class="jumbotron text-center">
+                <div class="container ">
+                    <div class="head_contents my-auto">
+                        <div class="head_text text-center">
+                            <br><br>
+                            <p>Whenever you want, <br> Whatever you want!</p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/.intro-->
+
+        <!--roomlist section-->    
+        <section id="roomlist" class="roomlist">
+
+            <div class="container">
+
+                <div class="section">
+                    <h2 class="section_title text-center">ROOM LIST</h2>
+                    <p class="section_line text-center">━━</p>
+                </div>
+
+                <div class="filter text-center">
+                    <p class="subtitle text-secondary">당신의 니즈에 꼭 맞는 자취공간을 찾을 수 있으실 거예요,</p>
+                </div>
+
+                <div class="row mx-auto my-5">
+                    {% for post in posts.all %}
+                    <div class="col-lg-4 mb-4">
+                        <div class="card h-100 mx-auto" style="width: 18rem;">
+                            <img src="{{ post.file.url }}" class="card-img-top" alt="...">
+                            <div class="card-body d-flex flex-column">
+                                <p class="title card-text">{{ post.title }}</p>
+                                <p class="pet card-text">애완동물: {{ post.pet }}</p>
+                                <p class="bill card-text">제시가격: <span>{{ post.bill }}</span></p>
+                                <p class="bill card-text">상세위치: {{ post.address2 }}</p>
+                                <a class="btn btn-secondary btn-sm align-self-end" href="{% url 'detail' post.id %}">이 방 자세히 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+
+            </div>
+        </section>
+        <!--/. roomlist section-->
+    {% endblock %}
+
+
+
+
+<h1>main</h1>
+<h2>모아보기</h2>
+
+<a href="{% url 'postcreate' %}">새 글 쓰기</a>
+<a href="{% url 'home' %}">home으로 돌아가기</a>
+
+{% for post in posts.all %}
+<p>title: {{ post.title }} </p>
+<p>summary: {{ post.summary }}......</p>
+<p>bill: {{ post.bill }}</p>
+<p>pet: {{ post.pet }}</p>
+<p>상세주소: {{ post.address2 }}</p>
+<img src="{{ post.file.url }}">
+<p>created at: {{ post.created_at }}</p>
+<p>updated at: {{ post.updated_at }}</p>
+<a href="{% url 'detail' post.id %}">자세히 보기</a>
+<hr><br>
+{% endfor %}
+
+
+

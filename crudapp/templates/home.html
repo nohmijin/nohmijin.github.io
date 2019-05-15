@@ -1,0 +1,139 @@
+
+{% extends 'base.html' %}
+    {% block contents %}
+
+    <!--intro-->
+    <section id="home-intro" class="h-100">
+        <div class="jumbotron text-center h-100">
+            <div class="container ">
+                <div class="head_contents my-auto">
+                    <div class="head_text text-center">
+                        <p class="text-black-50 mb-0">자취방 단기 임대 서비스</p>
+                        <h1>MY LOVELY ROOM</h1>
+                        {% comment %} <hr> {% endcomment %}
+                        <p class="text-light">Do you wanna share your room? Plase click the button!</p>
+                    </div>
+                    <div class="head_btn">
+                        <a href="{% url 'postcreate' %}" class="btn btn-light btn-sm text-secondary my-2">자취방 등록하기</a>
+                        <a href="{% url 'main' %}" class="btn btn-light btn-sm text-secondary my-2">자취방 찾아보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/. intro-->
+
+    <!--about us-->
+        <section id="aboutus" class="aboutus">
+
+            <div class="container">
+
+                <div class="section">
+                    <h2 class="section_title text-center">ABOUT US</h2>
+                    <p class="section_line text-center">━━</p>
+                </div>
+
+                <div class="row mx-auto my-4">
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>강연재, Frontend</h4> 
+                                    <p>안녕하세요 프론트엔드 담당 및 서비스 기획자 강연재입니다.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%; ">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>김지연, Frontend </h4> 
+                                    <p>안녕하세요 프론트엔드 담당 및 서비스 기획자 김지연입니다.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%; ">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>노미진, Frontend</h4> 
+                                    <p>안녕하세요 프론트엔드 담당 및 서비스 기획자 노미진입니다.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-auto">
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>노하은, Backend</h4> 
+                                    <p>안녕하세요 백엔드 담당 및 서비스 기획자 노하은입니다. </p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>박건희, Backend</h4> 
+                                    <p>안녕하세요 백엔드 담당 및 서비스 기획자 박건희입니다.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="flip-card mx-auto">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img class="img-thumbnail" src="http://gfw.co.uk/media/1140/default-pupil-profile.png" style="width:100%;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <br><br>
+                                    <h4>오석호, Backend</h4> 
+                                    <p>안녕하세요 백엔드 담당 및 서비스 기획자 오석호입니다.</p> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--/.aboutus-->
+
+
+    {% endblock %}
+</body>
+

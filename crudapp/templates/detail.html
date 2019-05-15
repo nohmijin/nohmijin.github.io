@@ -1,0 +1,128 @@
+
+{% extends 'base.html' %}
+    {% block contents %}
+
+    <!--intro-->
+    <section id="main-intro" >
+        <div class="jumbotron text-center">
+            <div class="container ">
+                <div class="head_contents my-auto">
+                    <div class="head_text text-center">
+                        <br><br>
+                        <p>Whenever you want, <br> Whatever you want!</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/.intro-->
+
+
+    <div class="container">
+        <div class="row">
+
+            <!--임대인 정보-->
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text text-muted"> Host-Info.</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">호스트 이름</h6>
+                            <small class="text-muted">호스트 이름</small>
+                        </div>
+                        <span class="text-muted">★</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">호스트 성별/나이</h6>
+                            <small class="text-muted">호스트 성별/나이</small>
+                        </div>
+                        <span class="text-muted">★</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">호스트 연락처</h6>
+                            <small class="text-muted">호스트 연락처</small>
+                        </div>
+                        <span class="text-muted">★</span>
+                    </li>
+                </ul>
+            </div>
+            <!--/. 임대인 정보-->
+
+            <!--방 정보-->
+            <div id="room-info" class="col-md-8 order-md-1">
+                <h4 class="text mb-3 text-muted">Room Info.</h4>
+                <img src="{{ post.file.url }}" style="max-width: 100%;max-height: 100%;">
+                <br><br>
+                <ul class="list-group mb-3">
+
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <div class="text-success">
+                            <h6 class="my-0">{{ post.title }}</h6>
+                            <small>방 이름</small>
+                        </div>
+                        <span class="text-success">☆</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ post.created_at }}</h6>
+                            <small class="text-muted">등록날짜</small>
+                        </div>
+                        <span class="text-muted">☆</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ post.bill }}</h6>
+                            <small class="text-muted">제시가격</small>
+                        </div>
+                        <span class="text-muted">☆</span>
+                    </li>
+                    
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ post.address2 }}</h6>
+                            <small class="text-muted">상세주소</small>
+                        </div>
+                        <span class="text-muted">☆</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ post.content }}</h6>
+                            <small class="text-muted">방 소개</small>
+                        </div>
+                        <span class="text-muted">☆</span>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">{{ post.pet }}</h6>
+                            <small class="text-muted">애완동물</small>
+                        </div>
+                        <span class="text-muted">☆</span>
+                    </li>
+                </ul>
+
+            </div>
+            <!--/. 방 정보-->
+
+        </div>
+   
+            <a class="btn btn-secondary" href="{% url 'postupdate' post.id %}">수정하기</a>
+            <a class="btn btn-secondary" href="{% url 'postdelete' post.id %}">삭제하기</a>
+    </div>
+
+{% endblock %}
+
+
+
+<p>updated at: {{ post.updated_at }}</p>
+
+<a href="{% url 'postupdate' post.id %}">수정하기</a>
+<a href="{% url 'postdelete' post.id %}">삭제하기</a>
